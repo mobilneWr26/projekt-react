@@ -2,7 +2,7 @@ function Quiz(){
 
     return ( 
         <>
-        elo elo
+       
         </>
     )
 }

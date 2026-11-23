@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
-
+import { nazwaPanstwaPoPolsku } from "../utils/tlumaczenia";
+import { nazwaStolicyPoPolsku } from "../utils/tlumaczenia";
 function StronaGlowna() {
   const [kraje, setKraje] = useState([]);
   const [ladowanie, setLadowanie] = useState(true);
   const [blad, setBlad] = useState("");
+
 
   useEffect(() => {
   async function pobierzKraje() {
@@ -36,19 +38,29 @@ function StronaGlowna() {
     return <p>{blad}</p>;
   }
 
-  if(!ladowanie && !blad){
-    return <p>Załadowano {kraje.length} państw!</p>;
-  }
-  return (
-    <div>
-      <h1>🌍 CountryQuiz</h1>
-      <p>Sprawdź swoją wiedzę o państwach świata!</p>
-      <button>Rozpocznij quiz</button>
-      
 
+return (
+  <div className="strona-glowna">
+    <h1>🌍 CountryQuiz</h1>
+    <p>Wybierz państwo, aby rozpocząć quiz!</p>
+
+    <p>Załadowano {kraje.length} państw</p>
+    <div className="lista-krajow">
+      {kraje.slice(0, 12).map((kraj) => (
+        //key - identyfikator elementu listy
+        <div className="karta-kraju" key={kraj.alpha3Code}>
+          <img
+            src={kraj.flags.svg}
+            alt={"Flaga " + kraj.name}
+          />
+          <h2>{nazwaPanstwaPoPolsku(kraj)}</h2>
+          <p>Stolica: {nazwaStolicyPoPolsku(kraj.capital)}</p>
+        </div>
+      ))}
     </div>
-    
-  );
+  </div>
+);
+
 }
 
 export default StronaGlowna;
