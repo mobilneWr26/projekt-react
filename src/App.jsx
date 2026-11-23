@@ -5,8 +5,11 @@ import viteLogo from './assets/vite.svg'
 import './App.css'
 import { Route, Routes } from 'react-router'
 import { Link } from 'react-router'
+import StronaGlowna from './pages/StronaGlowna'
+import Wyniki from './pages/Wyniki'
+import Quiz from './pages/Quiz'
+import Historia from './pages/Historia'
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <main>
@@ -17,12 +20,12 @@ function App() {
         <Link to="/historia">Historia</Link>
       </nav>
 
-      <Routes>
-        <Route path="/" element={<h1>🌍 CountryQuiz</h1>} />
-        <Route path="/quiz" element={<h1>Quiz</h1>} />
-        <Route path="/wyniki" element={<h1>Wyniki</h1>} />
-        <Route path="/historia" element={<h1>Historia quizów</h1>} />
-      </Routes>
+    <Routes>
+      <Route path="/" element={<StronaGlowna />} />
+      <Route path="/quiz" element={<Quiz />} />
+      <Route path="/wyniki" element={<Wyniki />} />
+      <Route path="/historia" element={<Historia />} />
+    </Routes>
     </main>
   );
 }
