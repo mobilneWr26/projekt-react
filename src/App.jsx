@@ -20,12 +20,12 @@ function App() {
         <Link to="/historia">Historia</Link>
       </nav>
 
-    <Routes>
-      <Route path="/" element={<StronaGlowna />} />
-      <Route path="/quiz" element={<Quiz />} />
-      <Route path="/wyniki" element={<Wyniki />} />
-      <Route path="/historia" element={<Historia />} />
-    </Routes>
+      <Routes>
+        <Route path="/" element={<StronaGlowna />} />
+        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/wyniki" element={<Wyniki />} />
+        <Route path="/historia" element={<Historia />} />
+      </Routes>
     </main>
   );
 }
