@@ -1,6 +1,7 @@
-import { useState, useEffect,useNavigate } from "react";
+import { useState, useEffect } from "react";
 import { nazwaPanstwaPoPolsku } from "../utils/tlumaczenia";
 import { nazwaStolicyPoPolsku } from "../utils/tlumaczenia";
+import { useNavigate } from "react-router";
 
 function StronaGlowna() {
   const [kraje, setKraje] = useState([]);
@@ -9,7 +10,7 @@ function StronaGlowna() {
   const [wyszukiwanie, setWyszukiwanie] = useState("");
   const [wybranyKraj, setWybranyKraj] = useState(null);
   const [poziomTrudnosci, setPoziomTrudnosci] = useState("latwy");
-
+  //useNavigate() - przekazuje dane do strony do której przechodzimy
   const navigate = useNavigate();
 
   function rozpocznijQuiz() {
@@ -17,7 +18,8 @@ function StronaGlowna() {
       navigate("/quiz", {
         state: {
           kraj: wybranyKraj,
-          poziomTrudnosci: poziomTrudnosci
+          poziomTrudnosci: poziomTrudnosci,
+          wszystkieKraje: kraje
         }
       });
     }

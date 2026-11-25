@@ -110,3 +110,102 @@ nav a:hover {
   outline: none;
   border-color: #3b82f6;
 }
+
+.wybor-poziomu {
+  margin-top: 20px;
+}
+
+.wybor-poziomu select {
+  padding: 10px;
+  background-color: #1e293b;
+  color: white;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button:disabled {
+  background-color: #475569;
+  cursor: not-allowed;
+}
+
+.odpowiedzi {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.odpowiedz {
+  margin: 0;
+}
+
+.odpowiedz.poprawna:disabled {
+  background-color: #15803d;
+  color: white;
+}
+
+.odpowiedz.bledna:disabled {
+  background-color: #dc2626;
+  color: white;
+}
+
+.tekst-poprawny {
+  color: #4ade80;
+}
+
+.tekst-bledny {
+  color: #f87171;
+}
+
+@media (max-width: 500px) {
+  .odpowiedzi {
+    grid-template-columns: 1fr;
+  }
+}
+
+.naglowek-quizu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.licznik-punktow {
+  position: fixed;
+  top: 75px;
+  right: 30px;
+
+  background-color: #1e293b;
+  color: white;
+  padding: 12px 20px;
+  border: 1px solid #334155;
+  border-radius: 25px;
+  font-weight: bold;
+  z-index: 10;
+}
+@media (max-width: 600px) {
+  .licznik-punktow {
+    top: 70px;
+    right: 12px;
+    padding: 10px 14px;
+  }
+}
+
+.pasek-postepu {
+  width: 100%;
+  height: 12px;
+  background-color: #334155;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.wypelnienie-postepu {
+  height: 100%;
+  background-color: #3b82f6;
+  border-radius: 20px;
+  transition: width 0.3s;
+}

@@ -92,3 +92,40 @@ export function nazwaStolicyPoPolsku(stolica) {
 
   return stolicePoPolsku[stolica] || stolica;
 }
+
+export const kontynentyPoPolsku = {
+  "Europe": "Europa",
+  "Asia": "Azja",
+  "Africa": "Afryka",
+  "Americas": "Ameryka",
+  "Oceania": "Oceania",
+  "Antarctic": "Antarktyda"
+};
+
+export function nazwaKontynentuPoPolsku(kontynent) {
+  return kontynentyPoPolsku[kontynent] || kontynent;
+}
+
+const tłumaczenieWalut = new Intl.DisplayNames(["pl"], {
+  type: "currency"
+});
+
+const tłumaczenieJezykow = new Intl.DisplayNames(["pl"], {
+  type: "language"
+});
+
+export function nazwaWalutyPoPolsku(kod) {
+  if (!kod) {
+    return "Brak danych";
+  }
+
+  return tłumaczenieWalut.of(kod) || kod;
+}
+
+export function nazwaJezykaPoPolsku(kod) {
+  if (!kod) {
+    return "Brak danych";
+  }
+
+  return tłumaczenieJezykow.of(kod) || kod;
+}
